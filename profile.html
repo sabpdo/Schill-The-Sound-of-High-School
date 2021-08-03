@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My Profile | Qoom</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				font-family: 'Poppin',Sans-Serif;
+				background: rgb(23, 213, 209);
+				background: linear-gradient(45deg, rgb(23, 213, 209) 0%, rgb(253, 223, 70) 100%);
+				color: #212121;
+			}
+			main {
+				width: 720px;
+				margin: 40px auto;
+				background-color: #fff;
+				border: 1px solid #f4f6f7;
+				border-radius: 16px;
+				box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+				display: flex;
+				flex-direction: column;
+			}
+			section {
+				padding: 40px;
+			}
+			a, a:active, a:visited {
+				color: #212121;
+			}
+			a:hover {
+				color: #0067f4;
+				font-weight: 500;
+			}
+			h1 {
+				font-size: 1.5rem;
+			}
+			h2 {
+				font-size: 1.25rem;
+			}
+			h3 {
+				font-size: 1.125rem;
+			}
+			.profile-info {
+				display: flex;
+				flex-flow: row nowrap;
+			}
+			.profile-info > img {
+				width: 40%;
+				object-fit: contain;
+				background-color: #f4f6f7;
+				margin-right: 40px;
+			}
+			.profile-info > div {
+				flex-grow: 1;
+			}
+			.profile-info > div > div {
+				margin: 16px 0;
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 1.75;
+				hyphens: auto;
+			}
+			.profile-info > div > div > label {
+				font-size: 14px;
+				color: #696969;
+			}
+			
+			/* Links */
+			.profile-info .links-container {
+				margin-top: 0;
+				padding-inline-start: 0;
+    			list-style: none;
+			}
+			.profile-info .links-container > li {
+				margin-right: 16px;
+				vertical-align: middle;
+			}
+			
+			/* Send Me a Message Button */
+			.profile-info button {
+				background-color: #fff;
+				border: 1px solid #0c1440;
+				color: #0c1440;
+				padding: 8px;
+				font-size: 16px;
+			}
+			.profile-info button:hover {
+				border-color: #0067f4;
+				color: #0067f4;
+			}
+		</style>
+		<style>
+			@media only screen and (max-width: 760px) {
+				main {
+					width: 100%;
+					margin-top: 20px;
+				}
+				section {
+					padding: 40px 20px 0;
+				}
+				.profile-info {
+					flex-flow: column;
+					align-items: center;
+				}
+				.profile-info > img {
+					margin-right: 0;
+				}
+				.profile-info > div {
+					text-align: center;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<section class="profile-info">
+				<img src="{{avatar}}">
+				<div>
+					<!--Fetch nickname from Settings > Public Profile-->
+					<h1>{{nickname}}</h1>
+					<div>
+						<label>About Me</label>
+						<!--Fetch about me from Settings > Public Profile-->
+						<div>{{about}}</div>
+					</div>
+					<div>
+						<label>Links</label>
+						<!--Fetch links from Settings > Public Profile-->
+						<div>{{profileLinks}}</div>
+					</div>
+					<!-- Add a button to send message to your email address -->
+					<div>{{contactMe}}</div>
+				</div>
+			</section>
+			<section>
+				<h2>My Projects</h2>
+				<!--Add your published projects-->
+				<script src='/registration/js/projects.js'></script>
+			</section>
+		</main>
+	</body>
+</html>
